@@ -1,0 +1,21 @@
+from itertools import permutations
+
+def generate_new_words(input_string):
+    # Generate all unique permutations of the input string
+    perm = set([''.join(p) for p in permutations(input_string)])
+    
+    # Convert the set to a list and sort it
+    new_words = sorted(list(perm))
+    
+    return new_words
+
+# Get user input
+user_input = input("Enter a string: ")
+
+# Generate new words
+new_words = generate_new_words(user_input)
+
+# Print the results
+print("New words with the same number of letters:")
+for word in new_words:
+    print(word)
