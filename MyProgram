@@ -1,0 +1,19 @@
+def rotate_string(s):
+    if len(s) != 3:
+        return "Please enter a 3-character string"
+    
+    original = s
+    rotations = []
+    
+    # Try all possible rotations
+    for _ in range(3):
+        rotations.append(s)
+        s = s[1:] + s[0]  # Rotate the string
+        if s == original:
+            break
+            
+    return rotations
+
+s = input("enter string: ")
+result = rotate_string(s)
+print("All rotations:", result)
